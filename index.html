@@ -42,7 +42,7 @@
 
         <section>
           <h3>Learning ReactJS</h3>
-          <p>See <a href="https://css-tricks.com/developer-roadmaps/" target="_blank">ReactJS Official Guide</a></p>
+          <p>See <a href="https://reactjs.org/" target="_blank">ReactJS Official Guide</a></p>
         </section>
 
         <section>
@@ -51,7 +51,16 @@
         </section>
 
         <section>
+          <h3>How about 2018?</h3>
+          <p>See <a href="https://www.youtube.com/watch?v=Xd7huBu39qk" target="_blank">What You Need to Know to be a Front End Developer in 2018</a></p>
+        </section>
+
+        <section>
           <h3>Thank you!</h3>
+        </section>
+
+        <section>
+          <h3>No! Enough of the buzzwords!</h3>
         </section>
 
         <section>
@@ -70,9 +79,18 @@
           <h3>Words of warnings</h3>
           <h4 class="fragment fade-up">We have cognitive limitations</h4>
           <ul>
-            <li class="fragment fade-up">how many things that we can remember and process at a time is fairly limited.</li>
-            <li class="fragment fade-up">Anything that we can't make senses of will fade away.</li>
+            <li class="fragment fade-up">How many things that we can remember and process at a time is fairly limited.</li>
+            <li class="fragment fade-up">Anything that we can't make senses of will fade away. So many buzzwords, huh?</li>
             <li class="fragment fade-up">Be careful with the fast talkers because they will jam your language processor!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>The <a href="https://www.google.com.vn/search?q=The+engineer+traits&oq=The+engineer+traits">traits</a> of engineers</h3>
+          <ul>
+            <li class="fragment fade-up">Desire to Figure Things Out - Curiosity</li>
+            <li class="fragment fade-up">Attention to Detail</li>
+            <li class="fragment fade-up">Critical Thinking</li>
           </ul>
         </section>
 
@@ -139,14 +157,7 @@
       </a>
     );
   }
-              ```
-            </script>
-          </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              ### ProfilePic Component
-              ```JSX
   function ProfilePic (username) {
     return (
       <img
@@ -155,13 +166,7 @@
       />
     );
   }
-              ```
-            </script>
-          </section>
 
-          <section data-markdown>
-            <script type="text/template">
-              ```JSX
   function Profile (username) {
     return (
       <div className='profile'>
@@ -173,6 +178,7 @@
               ```
             </script>
           </section>
+
           <section data-markdown>
             <script type="text/template">
               ### More Composition example
@@ -186,7 +192,10 @@
           </section>
           <section>
             <h3>Compositional model</h3>
-            <p>Building application with ReactJS is composing the smaller pieces together into a full application</p>
+            <p>
+              Building application with ReactJS is composing the smaller pieces together into
+              a full application. Just like playing LEGO.
+            </p>
           </section>
         </section>
 
@@ -222,19 +231,19 @@
               In contrast to imperative code, we've got declarative code. We declare what we want done, and JavaScript will take care of doing it.
             </p>
 
-            <pre><code>
+            <pre class="fragment fade-up"><code>
   const people = ['Amanda', 'Geoff', 'Michael']
   const excitedPeople = people.map(name => name + '!')
             </code></pre>
           </section>
 
           <section>
-            <h4>That's it! Notice that with this code we haven't:</h4>
+            <h4>Notice that with this code we haven't:</h4>
             <ul>
               <li>created an iterator object</li>
               <li>told the code when it should stop running</li>
-              <li>used the iterator to access a specific item in the people array</li>
-              <li>stored each new string in the excitedPeople array</li>
+              <li>used the iterator to access a specific item in the <code>people</code> array</li>
+              <li>stored each new string in the <code>excitedPeople</code> array</li>
             </ul>
           </section>
 
@@ -249,10 +258,14 @@
     Activate Teleporter
   </button>
               ```
+            </script>
+          </section>
 
+          <section>
+            <p>
               Notice that e aren't using .addEventListener() to set up event handling.
               Instead, we're just declaring that the activateTeleporter function to run when the button is clicked.
-            </script>
+            </p>
           </section>
 
           <section>
@@ -272,8 +285,21 @@
 
           <section>
             <p>
-              This is a hard learn lesson at scale.
+              This is a hard learned lesson at scale.
             </p>
+          </section>
+
+          <section>
+            <p>
+              Before ReactJS, popular frontend frameworks like Angular and Ember make use of two-way data bindings.
+              Two-way data binding sounds really powerful, but it can make the application harder to reason about
+              and know where the data is actually being updated.
+            </p>
+          </section>
+
+          <section>
+            <h3>Uni-directional dataflow</h3>
+            <img src="images/unidirectional-data-flow.png" alt="unidirectional-data-flow">
           </section>
 
           <section>
@@ -312,9 +338,12 @@
           </section>
 
           <section>
-              <h3>Modern Web App Requirements</h3>
-              <p>Frontend application become more and more complex and user became less and less forgiving for bad User eXperiences</p>
-            </section>
+            <h3>Modern Web App Requirements</h3>
+            <p>
+              Significant part of application logic has been shifted from the Backend to the Frontend.
+              Frontend application become more and more complex and user became less and less forgiving for bad User eXperiences
+            </p>
+          </section>
 
           <section>
             <blockquote cite="#">
@@ -323,6 +352,25 @@
               fetching data before performing route transitions, and so on. We find ourselves trying to
               manage a complexity that we have never had to deal with before ...&rdquo;
             </blockquote>
+          </section>
+
+          <section>
+            <p>
+              The frontend become more and more demanding
+            </p>
+          </section>
+
+          <section>
+            <blockquote cite="https://twitter.com/wycats/status/930463710941872128">
+              &ldquo; Front end software development is:
+              - real-time (instant load, 60fps)
+              - distributed, incremental (synchronize remote data as needed)
+              - asynchronous
+              - reactive (react to user actions in realtime)
+
+              Front end is the hardest kind of dev I do. The folks who do it every day are heroes. &rdquo;
+            </blockquote>
+            <small>Yehuda Katz, co-creator of Ember.js and serial Open Sourcerer.</small>
           </section>
         </section>
 
@@ -335,6 +383,7 @@
             <li class="fragment fade-up"><a href="https://codepen.io/" target="_blank">CodePen</a></li>
             <li class="fragment fade-up"><a href="https://alistapart.com/blog" target="_blank">ALIST APART</a></li>
             <li class="fragment fade-up"><a href="https://www.webpagetest.org/" target="_blank">WEBPAGETEST</a></li>
+            <li class="fragment fade-up"><a href="https://davidwalsh.name" target="_blank">David Walsh Blog</a></li>
           </ul>
         </section>
 
