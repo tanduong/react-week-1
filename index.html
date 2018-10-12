@@ -1,49 +1,363 @@
 <!doctype html>
 <html>
-	<head>
-		<meta charset="utf-8">
-		<meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no">
 
-		<title>reveal.js</title>
+    <title>Tan Duong - Getting started with ReactJS</title>
 
-		<link rel="stylesheet" href="css/reveal.css">
-		<link rel="stylesheet" href="css/theme/black.css">
+    <link rel="stylesheet" href="css/reveal.css">
+    <link rel="stylesheet" href="css/theme/sky.css" id="theme">
 
-		<!-- Theme used for syntax highlighting of code -->
-		<link rel="stylesheet" href="lib/css/zenburn.css">
+    <!-- Theme used for syntax highlighting of code -->
+    <link rel="stylesheet" href="lib/css/zenburn.css">
 
-		<!-- Printing and PDF exports -->
-		<script>
-			var link = document.createElement( 'link' );
-			link.rel = 'stylesheet';
-			link.type = 'text/css';
-			link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
-			document.getElementsByTagName( 'head' )[0].appendChild( link );
-		</script>
-	</head>
-	<body>
-		<div class="reveal">
-			<div class="slides">
-				<section>Slide 1</section>
-				<section>Slide 2</section>
-			</div>
-		</div>
+    <!-- Printing and PDF exports -->
+    <script>
+      var link = document.createElement( 'link' );
+      link.rel = 'stylesheet';
+      link.type = 'text/css';
+      link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
+      document.getElementsByTagName( 'head' )[0].appendChild( link );
+    </script>
+  </head>
+  <body>
+    <div class="reveal">
+      <div class="slides">
+        <section>
+          <h2>Getting started with ReactJS</h1>
+        </section>
 
-		<script src="lib/js/head.min.js"></script>
-		<script src="js/reveal.js"></script>
+        <section>
+            <h3>So you want to be a Frontend developer?</h3>
+            <p>See what <a href="https://www.google.com.vn/search?q=So+you+want+to+be+a+Frontend+developer%3F&oq=So+you+want+to+be+a+Frontend+developer%3F" target="_blank">
+              Google professor
+            </a> say</p>
+          </section>
 
-		<script>
-			// More info about config & dependencies:
-			// - https://github.com/hakimel/reveal.js#configuration
-			// - https://github.com/hakimel/reveal.js#dependencies
-			Reveal.initialize({
-				dependencies: [
-					{ src: 'plugin/markdown/marked.js' },
-					{ src: 'plugin/markdown/markdown.js' },
-					{ src: 'plugin/notes/notes.js', async: true },
-					{ src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
-				]
-			});
-		</script>
-	</body>
+        <section>
+          <h3>Frontend Developer Path</h3>
+          <p>See <a href="https://css-tricks.com/developer-roadmaps/" target="_blank">Developer Roadmaps</a></p>
+        </section>
+
+        <section>
+          <h3>Learning ReactJS</h3>
+          <p>See <a href="https://css-tricks.com/developer-roadmaps/" target="_blank">ReactJS Official Guide</a></p>
+        </section>
+
+        <section>
+          <h3>Cheatsheet?</h3>
+          <p>See <a href="https://devhints.io/react" target="_blank">ReactJS Cheatsheet</a></p>
+        </section>
+
+        <section>
+          <h3>Thank you!</h3>
+        </section>
+
+        <section>
+          <h2>
+            Today Agenda
+          </h2>
+          <ul>
+            <li>Words of warnings</li>
+            <li>Why ReactJS?</li>
+            <li>ReactJS tour</li>
+            <li>Modern Web App Requirements</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Words of warnings</h3>
+          <h4 class="fragment fade-up">We have cognitive limitations</h4>
+          <ul>
+            <li class="fragment fade-up">how many things that we can remember and process at a time is fairly limited.</li>
+            <li class="fragment fade-up">Anything that we can't make senses of will fade away.</li>
+            <li class="fragment fade-up">Be careful with the fast talkers because they will jam your language processor!</li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Why ReactJS?</h3>
+          <img class="fragment fade-up" src="images/worthless-question.png" alt="">
+        </section>
+
+        <section>
+          <h3>ReactJS tour</h3>
+        </section>
+
+        <section>
+          <h4>ReactJS advantages</h4>
+          <ul>
+            <li>Compositional model</li>
+            <li>Declarative nature</li>
+            <li>Uni-directional dataflow</li>
+            <li>“Just javascript”</li>
+          </ul>
+        </section>
+
+        <section>
+          <section>
+            <h3>Compositional model</h3>
+          </section>
+          <section>
+            <h4>Composition</h4>
+            <p>From <a href="https://en.wikipedia.org/wiki/Function_composition_(computer_science)" target="_blank">Wikipedia</a> Composition is:</p>
+
+            <blockquote cite="https://en.wikipedia.org/wiki/Function_composition_(computer_science)">
+              &ldquo;to combine simple functions to build more complicated ones&rdquo;
+            </blockquote>
+          </section>
+          <section>
+            <h4>Composition Example</h4>
+            <pre><code>
+  function getProfileLink (username) {
+    return 'https://github.com/' + username
+  }
+
+  function getProfilePic (username) {
+    return 'https://github.com/' + username + '.png?size=200'
+  }
+
+  function getProfileData (username) {
+    return {
+      pic: getProfilePic(username),
+      link: getProfileLink(username)
+    }
+  }
+            </code></pre>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### ProfileLink Component
+
+              ```JSX
+  function ProfileLink (username) {
+    return (
+      <a href={'https://github.com/' + username}>
+        {username}
+      </a>
+    );
+  }
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### ProfilePic Component
+              ```JSX
+  function ProfilePic (username) {
+    return (
+      <img
+        alt={username}
+        src={'https://github.com/' + username + 'png?size=200'}
+      />
+    );
+  }
+              ```
+            </script>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ```JSX
+  function Profile (username) {
+    return (
+      <div className='profile'>
+        <ProfilePic username={username} />
+        <ProfileLink username={username} />
+      </div>
+    )
+  }
+              ```
+            </script>
+          </section>
+          <section data-markdown>
+            <script type="text/template">
+              ### More Composition example
+              ```JSX
+  <Page>
+    <Article />
+    <Sidebar />
+  </Page>
+              ```
+            </script>
+          </section>
+          <section>
+            <h3>Compositional model</h3>
+            <p>Building application with ReactJS is composing the smaller pieces together into a full application</p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Declarative nature</h3>
+          </section>
+          <section>
+            <h3>Imperative Code</h3>
+            <p>
+              A lot of JavaScript is imperative code. According to the dictionary, "imperative" means:
+            </p>
+
+            <blockquote cite="#">
+              &ldquo;expressing a command; commanding&rdquo;
+            </blockquote>
+          </section>
+          <section>
+            <h3>Imperative Code Example</h3>
+            <pre><code>
+  const people = ['Amanda', 'Geoff', 'Michael']
+  const excitedPeople = []
+
+  for (let i = 0; i < people.length; i++) {
+    excitedPeople[i] = people[i] + '!'
+  }
+            </code></pre>
+          </section>
+
+          <section>
+            <h3>Declarative Code</h3>
+            <p>
+              In contrast to imperative code, we've got declarative code. We declare what we want done, and JavaScript will take care of doing it.
+            </p>
+
+            <pre><code>
+  const people = ['Amanda', 'Geoff', 'Michael']
+  const excitedPeople = people.map(name => name + '!')
+            </code></pre>
+          </section>
+
+          <section>
+            <h4>That's it! Notice that with this code we haven't:</h4>
+            <ul>
+              <li>created an iterator object</li>
+              <li>told the code when it should stop running</li>
+              <li>used the iterator to access a specific item in the people array</li>
+              <li>stored each new string in the excitedPeople array</li>
+            </ul>
+          </section>
+
+          <section data-markdown>
+            <script type="text/template">
+              ### ReactJS is declarative
+
+              ```JSX
+  <button
+    onClick={activateTeleporter}
+  >
+    Activate Teleporter
+  </button>
+              ```
+
+              Notice that e aren't using .addEventListener() to set up event handling.
+              Instead, we're just declaring that the activateTeleporter function to run when the button is clicked.
+            </script>
+          </section>
+
+          <section>
+            <h3>Recap</h3>
+            <p>
+                React is declarative because we write the code that we want, and
+                React is in charge of taking our declared code and performing all
+                of the JavaScript/DOM steps to get us to our desired result.
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Uni-directional dataflow</h3>
+          </section>
+
+          <section>
+            <p>
+              This is a hard learn lesson at scale.
+            </p>
+          </section>
+
+          <section>
+            <p>
+              In React, data flows in only one direction, from parent to child.
+              If data is shared between sibling child components, then the data
+              should be stored in the parent component and passed to both of the child components that need it.
+            </p>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>“Just javascript”</h3>
+          </section>
+          <section>
+            <h3>Let see a demo</h3>
+          </section>
+        </section>
+
+        <section>
+          <section>
+            <h3>Modern Web App Requirements</h3>
+          </section>
+
+          <section>
+            <p>
+              <a href="https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f" target="_blank">How it feels to learn JavaScript in 2016</a>
+            </p>
+            <img src="images/JS_2016.png" alt="JS in 2016">
+          </section>
+
+          <section>
+            <h3>But why frontend application has changed so much?</h3>
+            <p>Lets see the <a href="https://redux.js.org/introduction/motivation" target="_blank">motivation</a> of a famous library.</p>
+          </section>
+
+          <section>
+              <h3>Modern Web App Requirements</h3>
+              <p>Frontend application become more and more complex and user became less and less forgiving for bad User eXperiences</p>
+            </section>
+
+          <section>
+            <blockquote cite="#">
+              &ldquo;... consider the new requirements becoming common in front-end product development.
+              As developers, we are expected to handle optimistic updates, server-side rendering,
+              fetching data before performing route transitions, and so on. We find ourselves trying to
+              manage a complexity that we have never had to deal with before ...&rdquo;
+            </blockquote>
+          </section>
+        </section>
+
+        <section>
+          <h3>Extra credit</h3>
+          <h4 class="fragment fade-up">Sites you should know</h4>
+          <ul>
+            <li class="fragment fade-up"><a href="https://css-tricks.com" target="_blank">CSS Tricks</a></li>
+            <li class="fragment fade-up"><a href="https://www.awwwards.com/" target="_blank">awwwards</a></li>
+            <li class="fragment fade-up"><a href="https://codepen.io/" target="_blank">CodePen</a></li>
+            <li class="fragment fade-up"><a href="https://alistapart.com/blog" target="_blank">ALIST APART</a></li>
+            <li class="fragment fade-up"><a href="https://www.webpagetest.org/" target="_blank">WEBPAGETEST</a></li>
+          </ul>
+        </section>
+
+        <section>
+          <h3>Thank you!</h3>
+        </section>
+      </div>
+    </div>
+
+    <script src="lib/js/head.min.js"></script>
+    <script src="js/reveal.js"></script>
+    <script>
+      // More info about config & dependencies:
+      // - https://github.com/hakimel/reveal.js#configuration
+      // - https://github.com/hakimel/reveal.js#dependencies
+      Reveal.initialize({
+        dependencies: [
+          { src: 'plugin/markdown/marked.js' },
+          { src: 'plugin/markdown/markdown.js' },
+          { src: 'plugin/notes/notes.js', async: true },
+          { src: 'plugin/highlight/highlight.js', async: true, callback: function() { hljs.initHighlightingOnLoad(); } }
+        ]
+      });
+    </script>
+  </body>
 </html>
