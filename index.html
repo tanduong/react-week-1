@@ -20,47 +20,30 @@
       link.href = window.location.search.match( /print-pdf/gi ) ? 'css/print/pdf.css' : 'css/print/paper.css';
       document.getElementsByTagName( 'head' )[0].appendChild( link );
     </script>
+
+    <style>
+      .reveal section img.contact {
+        width: 32px;
+        margin: 0;
+        border: none;
+        margin-left: 5px;
+      }
+    </style>
   </head>
   <body>
     <div class="reveal">
       <div class="slides">
         <section>
-          <h2>Getting started with ReactJS</h1>
-        </section>
-
-        <section>
-            <h3>So you want to be a Frontend developer?</h3>
-            <p>See what <a href="https://www.google.com.vn/search?q=So+you+want+to+be+a+Frontend+developer%3F&oq=So+you+want+to+be+a+Frontend+developer%3F" target="_blank">
-              Google professor
-            </a> say</p>
-          </section>
-
-        <section>
-          <h3>Frontend Developer Path</h3>
-          <p>See <a href="https://css-tricks.com/developer-roadmaps/" target="_blank">Developer Roadmaps</a></p>
-        </section>
-
-        <section>
-          <h3>Learning ReactJS</h3>
-          <p>See <a href="https://reactjs.org/" target="_blank">ReactJS Official Guide</a></p>
-        </section>
-
-        <section>
-          <h3>Cheatsheet?</h3>
-          <p>See <a href="https://devhints.io/react" target="_blank">ReactJS Cheatsheet</a></p>
-        </section>
-
-        <section>
-          <h3>How about 2018?</h3>
-          <p>See <a href="https://www.youtube.com/watch?v=Xd7huBu39qk" target="_blank">What You Need to Know to be a Front End Developer in 2018</a></p>
-        </section>
-
-        <section>
-          <h3>Thank you!</h3>
-        </section>
-
-        <section>
-          <h3>No! Enough of the buzzwords!</h3>
+          <h2>ReactJS Basics</h2>
+          <h4>
+            Tan Duong
+            <a href="https://www.linkedin.com/in/tan-duong">
+              <img class="contact" src="images/linkedin.png" alt="linkedin">
+            </a>
+            <a href="https://github.com/tanduong">
+              <img class="contact" src="images/github.png" alt="github">
+            </a>
+          </h4>
         </section>
 
         <section>
@@ -68,327 +51,78 @@
             Today Agenda
           </h2>
           <ul>
-            <li>Words of warnings</li>
-            <li>Why ReactJS?</li>
-            <li>ReactJS tour</li>
-            <li>Modern Web App Requirements</li>
+            <li>The job of frontend engineers</li>
+            <li>Prerequisites</li>
+            <li>Goals</li>
+            <li>
+              Demo apps
+              <ul>
+                <li>Contact list</li>
+                <li>Clock</li>
+                <li>Tic tac toe</li>
+              </ul>
+            </li>
           </ul>
         </section>
 
         <section>
-          <h3>Words of warnings</h3>
-          <h4 class="fragment fade-up">We have cognitive limitations</h4>
+          <h3>The job of frontend engineers</h3>
           <ul>
-            <li class="fragment fade-up">How many things that we can remember and process at a time is fairly limited.</li>
-            <li class="fragment fade-up">Anything that we can't make senses of will fade away. So many buzzwords, huh?</li>
-            <li class="fragment fade-up">Be careful with the fast talkers because they will jam your language processor!</li>
+            <li class="fragment fade-up">Turn design into code</li>
+            <li class="fragment fade-up">Input: Visual design, interaction design (flow), backend APIs</li>
+            <li class="fragment fade-up">Output: Code that works on browsers: html, css, js</li>
           </ul>
         </section>
 
         <section>
-          <h3>The <a href="https://www.google.com.vn/search?q=The+engineer+traits&oq=The+engineer+traits">traits</a> of engineers</h3>
+          <h3>Prerequisites</h3>
           <ul>
-            <li class="fragment fade-up">Desire to Figure Things Out - Curiosity</li>
-            <li class="fragment fade-up">Attention to Detail</li>
-            <li class="fragment fade-up">Critical Thinking</li>
-            <li class="fragment fade-up">Honesty</li>
+            <li class="fragment fade-up">Basic familiarity with <a target="_blank" href="https://internetingishard.com/">HTML &amp; CSS</a>.</li>
+            <li class="fragment fade-up">Basic knowledge of <a target="_blank" href="https://www.digitalocean.com/community/tutorial_series/how-to-code-in-javascript">JavaScript</a> and programming.</li>
+            <li class="fragment fade-up">Basic understanding of <a target="_blank" href="https://www.digitalocean.com/community/tutorial_series/understanding-the-dom-document-object-model">the DOM</a>.</li>
+            <li class="fragment fade-up">Familiarity with <a target="_blank" href="https://www.taniarascia.com/es6-syntax-and-feature-overview/">ES6 syntax and features</a>.</li>
+            <li class="fragment fade-up"><a target="_blank" href="https://www.taniarascia.com/how-to-install-and-use-node-js-and-npm-mac-and-windows/">Node.js and npm</a> installed globally.</li>
           </ul>
         </section>
 
         <section>
-          <h3>Why ReactJS?</h3>
-          <img class="fragment fade-up" src="images/worthless-question.png" alt="">
-        </section>
-
-        <section>
-          <h3>ReactJS tour</h3>
-        </section>
-
-        <section>
-          <h4>ReactJS advantages</h4>
+          <h3>Javascript Prerequisites</h3>
+          <p class="fragment fade-up">JavaScript <a target="_blank" href="https://gist.github.com/gaearon/683e676101005de0add59e8bb345340c">refresher pointers</a>.</p>
           <ul>
-            <li>Compositional model</li>
-            <li>Declarative nature</li>
-            <li>Uni-directional dataflow</li>
-            <li>“Just javascript”</li>
+            <li class="fragment fade-up">const/let</li>
+            <li class="fragment fade-up">class</li>
+            <li class="fragment fade-up">Arrow function</li>
+            <li class="fragment fade-up">Array#map/Array#filter/Array#reduce</li>
           </ul>
         </section>
 
         <section>
-          <section>
-            <h3>Compositional model</h3>
-          </section>
-          <section>
-            <h4>Composition</h4>
-            <p>From <a href="https://en.wikipedia.org/wiki/Function_composition_(computer_science)" target="_blank">Wikipedia</a> Composition is:</p>
-
-            <blockquote cite="https://en.wikipedia.org/wiki/Function_composition_(computer_science)">
-              &ldquo;to combine simple functions to build more complicated ones&rdquo;
-            </blockquote>
-          </section>
-          <section>
-            <h4>Composition Example</h4>
-            <pre><code>
-  function getProfileLink (username) {
-    return 'https://github.com/' + username
-  }
-
-  function getProfilePic (username) {
-    return 'https://github.com/' + username + '.png?size=200'
-  }
-
-  function getProfileData (username) {
-    return {
-      pic: getProfilePic(username),
-      link: getProfileLink(username)
-    }
-  }
-            </code></pre>
-          </section>
-
-          <section data-markdown>
-            <script type="text/template">
-              ### ProfileLink Component
-
-              ```JSX
-  function ProfileLink (username) {
-    return (
-      <a href={'https://github.com/' + username}>
-        {username}
-      </a>
-    );
-  }
-
-  function ProfilePic (username) {
-    return (
-      <img
-        alt={username}
-        src={'https://github.com/' + username + 'png?size=200'}
-      />
-    );
-  }
-
-  function Profile (username) {
-    return (
-      <div className='profile'>
-        <ProfilePic username={username} />
-        <ProfileLink username={username} />
-      </div>
-    )
-  }
-              ```
-            </script>
-          </section>
-
-          <section data-markdown>
-            <script type="text/template">
-              ### More Composition example
-              ```JSX
-  <Page>
-    <Article />
-    <Sidebar />
-  </Page>
-              ```
-            </script>
-          </section>
-          <section>
-            <h3>Compositional model</h3>
-            <p>
-              Building application with ReactJS is composing the smaller pieces together into
-              a full application. Just like playing LEGO.
-            </p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>Declarative nature</h3>
-          </section>
-          <section>
-            <h3>Imperative Code</h3>
-            <p>
-              A lot of JavaScript is imperative code. According to the dictionary, "imperative" means:
-            </p>
-
-            <blockquote cite="#">
-              &ldquo;expressing a command; commanding&rdquo;
-            </blockquote>
-          </section>
-          <section>
-            <h3>Imperative Code Example</h3>
-            <pre><code>
-  const people = ['Amanda', 'Geoff', 'Michael']
-  const excitedPeople = []
-
-  for (let i = 0; i < people.length; i++) {
-    excitedPeople[i] = people[i] + '!'
-  }
-            </code></pre>
-          </section>
-
-          <section>
-            <h3>Declarative Code</h3>
-            <p>
-              In contrast to imperative code, we've got declarative code. We declare what we want done, and JavaScript will take care of doing it.
-            </p>
-
-            <pre class="fragment fade-up"><code>
-  const people = ['Amanda', 'Geoff', 'Michael']
-  const excitedPeople = people.map(name => name + '!')
-            </code></pre>
-          </section>
-
-          <section>
-            <h4>Notice that with this code we haven't:</h4>
-            <ul>
-              <li>created an iterator object</li>
-              <li>told the code when it should stop running</li>
-              <li>used the iterator to access a specific item in the <code>people</code> array</li>
-              <li>stored each new string in the <code>excitedPeople</code> array</li>
-            </ul>
-          </section>
-
-          <section data-markdown>
-            <script type="text/template">
-              ### ReactJS is declarative
-
-              ```JSX
-  <button
-    onClick={activateTeleporter}
-  >
-    Activate Teleporter
-  </button>
-              ```
-            </script>
-          </section>
-
-          <section>
-            <p>
-              Notice that e aren't using .addEventListener() to set up event handling.
-              Instead, we're just declaring that the activateTeleporter function to run when the button is clicked.
-            </p>
-          </section>
-
-          <section>
-            <h3>Recap</h3>
-            <p>
-                React is declarative because we write the code that we want, and
-                React is in charge of taking our declared code and performing all
-                of the JavaScript/DOM steps to get us to our desired result.
-            </p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>Uni-directional dataflow</h3>
-          </section>
-
-          <section>
-            <p>
-              This is a hard learned lesson at scale.
-            </p>
-          </section>
-
-          <section>
-            <p>
-              Before ReactJS, popular frontend frameworks like Angular and Ember make use of two-way data bindings.
-              Two-way data binding sounds really powerful, but it can make the application harder to reason about
-              and know where the data is actually being updated.
-            </p>
-          </section>
-
-          <section>
-            <h3>Uni-directional dataflow</h3>
-            <img src="images/unidirectional-data-flow.png" alt="unidirectional-data-flow">
-          </section>
-
-          <section>
-            <p>
-              In React, data flows in only one direction, from parent to child.
-              If data is shared between sibling child components, then the data
-              should be stored in the parent component and passed to both of the child components that need it.
-            </p>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>“Just javascript”</h3>
-          </section>
-          <section>
-            <h3>Let see a demo</h3>
-          </section>
-        </section>
-
-        <section>
-          <section>
-            <h3>Modern Web App Requirements</h3>
-          </section>
-
-          <section>
-            <p>
-              <a href="https://hackernoon.com/how-it-feels-to-learn-javascript-in-2016-d3a717dd577f" target="_blank">How it feels to learn JavaScript in 2016</a>
-            </p>
-            <img src="images/JS_2016.png" alt="JS in 2016">
-          </section>
-
-          <section>
-            <h3>But why frontend application has changed so much?</h3>
-            <p>Lets see the <a href="https://redux.js.org/introduction/motivation" target="_blank">motivation</a> of a famous library.</p>
-          </section>
-
-          <section>
-            <h3>Modern Web App Requirements</h3>
-            <p>
-              Significant part of application logic has been shifted from the Backend to the Frontend.
-              Frontend application become more and more complex and user became less and less forgiving for bad User eXperiences
-            </p>
-          </section>
-
-          <section>
-            <blockquote cite="#">
-              &ldquo;... consider the new requirements becoming common in front-end product development.
-              As developers, we are expected to handle optimistic updates, server-side rendering,
-              fetching data before performing route transitions, and so on. We find ourselves trying to
-              manage a complexity that we have never had to deal with before ...&rdquo;
-            </blockquote>
-          </section>
-
-          <section>
-            <p>
-              The frontend become more and more demanding
-            </p>
-          </section>
-
-          <section>
-            <img src="images/Yehuda-Katz-Tweet.png" alt="https://twitter.com/wycats/status/930463710941872128">
-          </section>
-        </section>
-
-        <section>
-          <h3>Extra credit 1</h3>
-          <h4 class="fragment fade-up">Sites you should know</h4>
+          <h3>Goals</h3>
           <ul>
-            <li class="fragment fade-up"><a href="https://css-tricks.com" target="_blank">CSS Tricks</a></li>
-            <li class="fragment fade-up"><a href="https://www.awwwards.com/" target="_blank">awwwards</a></li>
-            <li class="fragment fade-up"><a href="https://codepen.io/" target="_blank">CodePen</a></li>
-            <li class="fragment fade-up"><a href="https://alistapart.com/blog" target="_blank">ALIST APART</a></li>
-            <li class="fragment fade-up"><a href="https://www.webpagetest.org/" target="_blank">WEBPAGETEST</a></li>
-            <li class="fragment fade-up"><a href="https://davidwalsh.name" target="_blank">David Walsh Blog</a></li>
-            <li class="fragment fade-up"><a href="https://reactarmory.com/guides/learn-react-by-itself" target="_blank">learn react by itself</a></li>
+            <li class="fragment fade-up">Learn about essential React concepts and related terms, such as components, JSX, props, state, and lifecycle and events.</li>
+            <li class="fragment fade-up">Build a simple React apps that demonstrates the above concepts.</li>
           </ul>
         </section>
 
         <section>
-            <h3>Extra credit 2</h3>
-            <h4 class="fragment fade-up">Familiarize yourself with functional constructs</h4>
-            <ul>
-              <li class="fragment fade-up">Array#map</li>
-              <li class="fragment fade-up">Array#filter</li>
-              <li class="fragment fade-up">Array#reduce</li>
-            </ul>
-          </section>
+          <h3>Learning ReactJS</h3>
+          <p>Let's <a href="https://reactjs.org/" target="_blank">Getting started</a></p>
+        </section>
+
+
+        <section>
+          <h3>Demo</h3>
+        </section>
+
+        <section>
+          <h3>Roadmap</h3>
+          <p>See <a href="https://github.com/adam-golab/react-developer-roadmap" target="_blank">React Developer Roadmap</a></p>
+        </section>
+
+        <section>
+          <h3>Cheatsheet?</h3>
+          <p>See <a href="https://devhints.io/react" target="_blank">ReactJS Cheatsheet</a></p>
+        </section>
 
         <section>
           <h3>Thank you!</h3>
